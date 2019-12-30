@@ -1,4 +1,4 @@
-const RomanNumber = require('../');
+const RomanNumber = require('..');
 
 function runOnce() {
 	for (let i = 1; i < 4000; i++) {
@@ -9,7 +9,7 @@ function runOnce() {
 	}
 }
 console.time(1);
-for (let k=0; k<10; k++) {
+for (let k = 0; k < 10; k++) {
 	runOnce();
 }
 console.timeEnd(1);

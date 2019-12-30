@@ -1,10 +1,10 @@
-const RomanNumber = require('../');
-const {assert} = console;
+const RomanNumber = require('..');
+const { assert } = console;
 
 const inputs = [ // [input, null for error or expected integer, expected roman number (default as input if undefined)] // todo check which error
 	[null, null],
 	['', null],
-	[0, null], 
+	[0, null],
 	[1, 1, 'I'],
 	[3, 3, 'III'],
 	[4, 4, 'IV'],
@@ -33,13 +33,13 @@ describe('RomanNumber', () => {
 	it('should stringify 152 as CLII', () => {
 		assert(RomanNumber(152) + '' === 'CLII');
 	});
-	
+
 	inputs.forEach(([input, expectedArabic, expectedRoman = input]) => {
-	
+
 		let num = null;
 		try {
-			num = new RomanNumber(input);	
-		} catch(e) {
+			num = new RomanNumber(input);
+		} catch (e) {
 			it(`should error for ${input} reason: ${e.message}`, () => {
 				assert(expectedArabic === null);
 			});
